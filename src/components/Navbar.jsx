@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,9 +16,6 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <Link to="/">RecipeApp</Link>
-      </div>
       <form onSubmit={handleSearch}>
         <input
           type="text"
@@ -28,8 +26,8 @@ const Navbar = () => {
         <button type="submit">Search</button>
       </form>
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/favorites">Favorites</Link>
+        <Link to="/DiscoverEAT" className="links">Home</Link>
+        <Link to="/favorites" className="links">Favorites</Link>
       </div>
     </nav>
   );
